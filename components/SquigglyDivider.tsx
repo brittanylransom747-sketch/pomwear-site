@@ -1,10 +1,18 @@
 import React from 'react';
 
-const SquigglyDivider: React.FC = () => {
+interface SquigglyDividerProps {
+  reversed?: boolean;
+}
+
+const SquigglyDivider: React.FC<SquigglyDividerProps> = ({ reversed = false }) => {
+  const topBg = reversed ? 'bg-brand-cream' : 'bg-white';
+  const bottomFill = reversed ? '#ffffff' : '#FEF6E4';
+  const bottomFillSecondary = reversed ? '#ffffff' : '#FDDAC5';
+  
   return (
     <div className="relative w-full" style={{ height: '100px', marginTop: '-1px' }}>
-      {/* White background on top */}
-      <div className="absolute inset-0 bg-white"></div>
+      {/* Background on top */}
+      <div className={`absolute inset-0 ${topBg}`}></div>
       
       {/* Squiggly wave SVG */}
       <svg
@@ -14,16 +22,16 @@ const SquigglyDivider: React.FC = () => {
         viewBox="0 0 1440 100"
         style={{ height: '100px' }}
       >
-        {/* Create a wavy path that transitions from white to cream */}
+        {/* Create a wavy path that transitions */}
         <path
           d="M0,50 Q180,10 360,50 T720,50 T1080,50 T1440,50 L1440,100 L0,100 Z"
-          fill="#FEF6E4"
+          fill={bottomFill}
         />
         {/* Additional wavy layer for more squiggle effect */}
         <path
           d="M0,60 Q200,20 400,60 T800,60 T1200,60 L1440,60 L1440,100 L0,100 Z"
-          fill="#FDDAC5"
-          opacity="0.3"
+          fill={bottomFillSecondary}
+          opacity={reversed ? "0.2" : "0.3"}
         />
       </svg>
     </div>

@@ -19,6 +19,7 @@ function App(): React.JSX.Element {
         <Problem />
         <SquigglyDivider />
         <Solution />
+        <SquigglyDivider reversed />
         <Market />
         <Roadmap />
         <Goals />
