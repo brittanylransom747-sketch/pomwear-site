@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
+import SquigglyDivider from './components/SquigglyDivider';
 import Solution from './components/Solution';
 import Market from './components/Market';
 import Roadmap from './components/Roadmap';
@@ -16,6 +17,7 @@ function App(): React.JSX.Element {
       <main>
         <Hero />
         <Problem />
+        <SquigglyDivider />
         <Solution />
         <Market />
         <Roadmap />
