@@ -25,7 +25,7 @@ const Problem: React.FC = () => {
             </p>
           </div>
           <div className="relative h-64 md:h-auto p-8 rounded-3xl bg-brand-peach">
-             <img src="/images/woman-discomfort.jpg" alt="Woman experiencing discomfort" className="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-30"/>
+             <img src={`${import.meta.env.BASE_URL}images/woman-discomfort.jpg`} alt="Woman experiencing discomfort" className="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-30"/>
             <div className="relative z-10 text-center flex flex-col items-center justify-center h-full">
               <p className="text-2xl font-bold text-brand-red">Over 84% of women experience menstrual pain.</p>
               <p className="text-4xl md:text-5xl font-extrabold text-brand-deep-red my-4">~16.8 Million</p>
